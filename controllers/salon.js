@@ -120,23 +120,6 @@ const putSalon = async (req = request, res = response) => {
     }
 };
 
-/*
-const deleteSalon = async (req, res) => {
-    const { id } = req.params;
-    const salonEncontrado = await Salon.findById(id);
-
-    if (salonEncontrado) {
-        if (salonEncontrado.porDefecto) {
-            res.status(400).json({ error: 'No se puede eliminar un salón por defecto' });
-        } else {
-            const salonEliminado = await Salon.findByIdAndDelete(id);
-            res.json(salonEliminado);
-        }
-    } else {
-        res.status(404).json({ error: 'Salón no encontrado' });
-    }
-};
-*/
 
 const deleteSalon = async (req, res) => {
     const { id } = req.params;

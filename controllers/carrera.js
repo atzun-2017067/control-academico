@@ -165,25 +165,6 @@ const putCarrera = async (req = request, res = response) => {
     }
 };
 
-
-/*
-const deleteCarrera = async (req, res) => {
-    const { id } = req.params;
-    const carreraEncontrada = await Carrera.findById(id);
-
-    if (carreraEncontrada) {
-        if (carreraEncontrada.porDefecto) {
-            res.status(400).json({ error: 'No se puede eliminar una carrera por defecto' });
-        } else {
-            const carreraEliminada = await Carrera.findByIdAndDelete(id);
-            res.json(carreraEliminada);
-        }
-    } else {
-        res.status(404).json({ error: 'Carrera no encontrada' });
-    }
-};
-*/
-
 const deleteCarrera = async (req, res) => {
     const { id } = req.params;
 

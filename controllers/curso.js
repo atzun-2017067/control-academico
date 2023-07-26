@@ -67,67 +67,6 @@ const getCursosAlumno = async (req, res) => {
     }
 };
 
-// const postCurso = async (req = request, res = response) => {
-//     try {
-//         const {
-//             nombreCurso,
-//             ciclo,
-//             cupoMaximo,
-//             cupoMinimo,
-//             codigoCarrera,
-//             horario,
-//             profesor,
-//             salon,
-//             alumnos,
-//             estado,
-//             img
-//         } = req.body;
-
-//         const cursoExistente = await Carrera.findById(nombreCurso);
-//         const carreraExistente = await Carrera.findById(codigoCarrera);
-//         const horarioExistente = await Horario.findById(horario);
-//         const profesorExistente = await Usuario.findById(profesor);
-//         const salonExistente = await Salon.findById(salon);
-
-//         if (carreraExistente && horarioExistente &&
-//             profesorExistente && salonExistente && cursoExistente) {
-//             // Verificar si el usuario es un profesor
-//             if (profesorExistente.rol === 'ROL_PROFESOR') {
-//                 const nuevoCurso = new Curso({
-//                     nombreCurso,
-//                     ciclo,
-//                     cupoMaximo,
-//                     cupoMinimo,
-//                     codigoCarrera,
-//                     horario,
-//                     profesor,
-//                     salon,
-//                     alumnos,
-//                     estado,
-//                     img
-//                 });
-
-//                 const cursoGuardado = await nuevoCurso.save();
-
-//                 res.status(201).json({
-//                     ok: true,
-//                     curso: cursoGuardado
-//                 });
-//             } else {
-//                 res.status(400).json({ error: 'El usuario no tiene el rol de profesor' });
-//             }
-//         } else {
-//             res.status(500).json({ error: 'No se encontró alguna de las entidades relacionadas' });
-//         }
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json({
-//             ok: false,
-//             error: 'Error al crear el curso'
-//         });
-//     }
-// };
-
 const postCurso = async (req = request, res = response) => {
     try {
         const {

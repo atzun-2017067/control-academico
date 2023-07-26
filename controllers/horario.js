@@ -14,43 +14,6 @@ const getHorarios = async (req, res) => {
     }
 };
 
-// const postHorario = async (req, res) => {
-//     try {
-//         // Obtener los datos del horario del cuerpo de la solicitud
-//         const {
-//             horarioInicio,
-//             horarioFinal,
-//             lunes,
-//             martes,
-//             miercoles,
-//             jueves,
-//             viernes,
-//             porDefecto
-//         } = req.body;
-
-//         // Crear una nueva instancia del modelo Horario con los datos proporcionados
-//         const nuevoHorario = new Horario({
-//             horarioInicio,
-//             horarioFinal,
-//             lunes,
-//             martes,
-//             miercoles,
-//             jueves,
-//             viernes,
-//             porDefecto
-//         });
-
-//         // Guardar el nuevo horario en la base de datos
-//         const horarioGuardado = await nuevoHorario.save();
-
-//         res.status(201).json({ horario: horarioGuardado });
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json({ error: 'Error al crear el horario' });
-//     }
-// };
-
-
 const postHorario = async (req, res) => {
     try {
         // Obtener la fecha y hora actual en formato ISO 8601

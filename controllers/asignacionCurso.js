@@ -3,36 +3,7 @@ const bcrypt = require('bcryptjs');
 
 const AsignacionCurso = require('../models/asignacionCurso');
 const Curso = require('../models/curso');
-const Usuario = require('../models/usuario');
 
-
-// ADMINISTRADOR
-// const getAsignacionesCurso = async (req, res) => {
-//     try {
-//         const asignacionesCurso = await AsignacionCurso.find()
-//             .populate({
-//                 path: 'carnet',
-//                 select: 'carnet'
-//             })
-//             .populate({
-//                 path: 'curso',
-//                 select: 'nombreCurso',
-//                 populate: {
-//                     path: 'nombreCurso',
-//                     model: 'Carrera',
-//                     select: 'carrera'
-//                 }
-//             });
-
-//         res.json(asignacionesCurso);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: 'Error al obtener las asignaciones de curso' });
-//     }
-// };
-
-
-//---------- 2.0 ---------------
 
 const getAsignacionesCurso = async (req, res) => {
     try {
@@ -126,33 +97,6 @@ const getAsignacionesCursoAlumno = async (req, res) => {
     }
 };
 
-
-
-// const postAsignacionCurso = async (req, res) => {
-//     const { curso } = req.body;
-
-//     try {
-//         const carnet = req.usuario._id; // Get the carnet from the authenticated user
-//         const fechaAsignacion = new Date(); // Set the current date as the default value
-
-//         const asignacionCurso = new AsignacionCurso({
-//             carnet,
-//             curso,
-//             fechaAsignacion
-//         });
-
-//         // Save the new asignacionCurso document
-//         const nuevaAsignacionCurso = await asignacionCurso.save();
-
-//         res.status(201).json(nuevaAsignacionCurso);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: 'Error al crear la asignación del curso' });
-//     }
-// };
-
-
-// ------------  2.0 ----------------
 
 const postAsignacionCurso = async (req, res) => {
     const { curso } = req.body;
